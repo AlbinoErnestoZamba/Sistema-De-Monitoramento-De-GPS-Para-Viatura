@@ -1,0 +1,178 @@
+/* src/pages/HomePage.css */
+
+/* Estilo da Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #6200ea; /* Cor roxa */
+    padding: 15px 40px;
+  }
+  
+  .navbar h1 {
+    color: #fff;
+    font-size: 24px;
+  }
+  
+  .nav-links {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  .login-btn {
+    background-color: #3700b3;
+    border: none;
+    padding: 8px 16px;
+    margin-left: 10px;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .login-btn:hover {
+    background-color: #5e35b1;
+  }
+  
+  /* Hero Section */
+  .hero {
+    background-image: url('../assets/car-background.png'); /* Imagem de fundo (coloque uma imagem depois) */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 20px 20px;
+    text-align: center;
+  }
+
+  
+  .hero h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+  
+  .register-btn {
+    background-color: #d32f2f;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .register-btn:hover {
+    background-color: #c62828;
+  }
+  
+  /* Features Section */
+  .features {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 20px;
+    background-color: #ffffff;
+  }
+  
+  .feature {
+    max-width: 300px;
+    text-align: center;
+  }
+  
+  .feature h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #6200ea;
+  }
+  
+  .feature p {
+    font-size: 16px;
+    color: #555;
+  }
+  
+  /* Developer Team Section */
+  .developer-team {
+    background-color: #f1f1f1;
+    text-align: center;
+    padding: 60px 20px;
+  }
+  
+  .developer-team h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 40px;
+  }
+  
+  .developer-card {
+    display: inline-block;
+    margin-top: 20px;
+  }
+  
+  .developer-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  
+  .developer-card p {
+    font-size: 16px;
+    color: #555;
+  }
+  
+  /* Footer */
+  .footer {
+    background-color: #212121;
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+  }
+  
+  .newsletter {
+    margin-bottom: 20px;
+  }
+  
+  .newsletter input {
+    padding: 10px;
+    margin-top: 10px;
+    margin-right: 5px;
+    border-radius: 5px;
+    border: none;
+  }
+  
+  .newsletter button {
+    padding: 10px 20px;
+    background-color: #6200ea;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .footer-links {
+    margin: 20px 0;
+  }
+  
+  .footer-links a {
+    color: #bbb;
+    margin: 0 10px;
+    text-decoration: none;
+  }
+  
+  .footer-links a:hover {
+    color: white;
+  }
+  

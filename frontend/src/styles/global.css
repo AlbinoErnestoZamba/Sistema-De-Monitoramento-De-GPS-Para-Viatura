@@ -1,0 +1,103 @@
+/* frontend/src/styles/global.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  body {
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  .header {
+    background: linear-gradient(to right, #5c6bc0, #8e24aa);
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+  }
+  
+  .nav-links a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .login-btn {
+    background-color: #673ab7;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+  
+  .hero {
+    padding: 220px 20px;
+  }
+  
+  .register-btn {
+    background-color: #d32f2f;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .features {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 20px;
+    background: #fff;
+  }
+  
+  .feature {
+    max-width: 300px;
+    text-align: center;
+  }
+  
+  .developer-team {
+    padding: 50px 20px;
+    background: #e0e0e0;
+    text-align: center;
+  }
+  
+  .developer-card {
+    margin-top: 20px;
+  }
+  
+  .developer-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+  }
+  
+  .footer {
+    background: #212121;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .footer-links a {
+    margin: 0 10px;
+    color: #ccc;
+    text-decoration: none;
+  }
+  
+  .newsletter input {
+    padding: 10px;
+    margin-top: 10px;
+    margin-right: 5px;
+  }
+  
