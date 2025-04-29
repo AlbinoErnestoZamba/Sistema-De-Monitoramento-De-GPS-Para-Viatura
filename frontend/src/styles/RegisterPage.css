@@ -1,0 +1,110 @@
+/* src/styles/RegisterPage.css */
+
+.register-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 40px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .register-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .register-form fieldset {
+    border: none;
+    margin-bottom: 30px;
+  }
+  
+  .register-form legend {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  
+  .register-form p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 15px;
+  }
+  
+  .register-form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    transition: border-color 0.3s;
+  }
+  
+  .register-form input:focus {
+    border-color: #7e57c2;
+    outline: none;
+  }
+  
+  .register-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .register-buttons button {
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .register-buttons button:first-child {
+    background: transparent;
+    color: #333;
+  }
+  
+  .submit-btn {
+    background: #6200ea;
+    color: white;
+  }
+  
+  .submit-btn:hover {
+    background: #3700b3;
+  }
+
+  .success-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #d0f2d8;
+    color: #2e7d32;
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    border: 1px solid #a5d6a7;
+  }
+
+  .success-bar, .error-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    border: 1px solid;
+  }
+  
+  .success-bar {
+    background-color: #d0f2d8;
+    color: #2e7d32;
+    border-color: #a5d6a7;
+  }
+  
+  .error-bar {
+    background-color: #fdecea;
+    color: #d32f2f;
+    border-color: #f5c6cb;
+  }
+  

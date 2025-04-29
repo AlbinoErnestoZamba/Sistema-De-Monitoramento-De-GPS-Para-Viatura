@@ -30,7 +30,10 @@ const HomePage = () => {
         <div className="hero">
           <h2>Acompanhe O Seu Veículo 24 HORAS Por Dia</h2>
           <p>Rastreie e gerencie sua frota com eficiência</p>
-          <button className="register-btn">Registrar-se</button>
+          <Link to="/register">
+  <button className="register-btn">Registrar-se</button>
+</Link>
+
         </div>
       </header>
 
