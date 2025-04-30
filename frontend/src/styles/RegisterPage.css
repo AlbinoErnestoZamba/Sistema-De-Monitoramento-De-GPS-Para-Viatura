@@ -1,5 +1,9 @@
 /* src/styles/RegisterPage.css */
 
+body {
+  background: linear-gradient(to right, #5c6bc0, #8e24aa);
+}
+
 .register-container {
     max-width: 800px;
     margin: 40px auto;

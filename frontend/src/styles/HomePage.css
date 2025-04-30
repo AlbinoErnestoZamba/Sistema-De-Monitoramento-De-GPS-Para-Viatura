@@ -14,6 +14,15 @@
   font-weight: bold;
 }
 
+.logo_mucune{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-image: url('../assets/logo.jpeg');
+  background-size: cover;
+  background-position: center;
+  margin-right: -184px;
+}
 .nav-links {
   display: flex;
   align-items: center;
@@ -121,6 +130,7 @@
 }
 
 /* Developer Team Section */
+/* Equipe de Desenvolvimento */
 .developer-team {
   background-color: #f1f1f1;
   text-align: center;
@@ -135,7 +145,7 @@
 
 .developer-card {
   display: inline-block;
-  margin-top: 20px;
+  margin: 20px;
 }
 
 .developer-card img {
@@ -149,18 +159,15 @@
 .developer-card p {
   font-size: 16px;
   color: #555;
+  background-image: url("../assets/dev3.jpg");
 }
 
-/* Footer */
+/* Rodapé */
 .footer {
   background-color: #212121;
   color: white;
   padding: 30px 20px;
   text-align: center;
-}
-
-.newsletter {
-  margin-bottom: 20px;
 }
 
 .newsletter input {
@@ -193,5 +200,6 @@
 .footer-links a:hover {
   color: white;
 }
+
 
   

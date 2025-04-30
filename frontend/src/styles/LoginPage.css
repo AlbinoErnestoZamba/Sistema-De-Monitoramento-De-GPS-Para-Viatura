@@ -15,7 +15,7 @@ body, html {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: #f3f3f3;
+  background: linear-gradient(to right, #5c6bc0, #8e24aa);
 }
 
 .login-box {

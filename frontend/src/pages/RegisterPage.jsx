@@ -29,31 +29,31 @@ const RegisterPage = () => {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+     e.preventDefault();
 
-    const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const vinValido = /^[A-HJ-NPR-Z0-9]{17}$/i;
-  
-    if (!emailValido.test(formData.email)) {
-      setFormError('Por favor, insira um endereço de e-mail válido!');
-      return;
-    }
-  
-    if (formData.senha !== formData.confirmarSenha) {
-      setFormError('As senhas não coincidem!');
-      return;
-    }
-  
-    if (!vinValido.test(formData.vin)) {
-      setFormError('O VIN do veículo deve conter exatamente 17 caracteres válidos.');
-      return;
-    }
-  
-    setFormSuccess(true);
-    setFormError('');
-    setTimeout(() => setFormSuccess(false), 4000);
-  
-    // Aqui você pode enviar os dados para a API
+  const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const vinValido = /^[A-HJ-NPR-Z0-9]{17}$/i;
+
+  if (!emailValido.test(formData.email)) {
+    setFormError('Por favor, insira um endereço de e-mail válido!');
+    return;
+  }
+
+  if (formData.senha !== formData.confirmarSenha) {
+    setFormError('As senhas não coincidem!');
+    return;
+  }
+
+  if (!vinValido.test(formData.vin)) {
+    setFormError('O VIN do veículo deve conter exatamente 17 caracteres válidos.');
+    return;
+  }
+
+  setFormSuccess(true);
+  setFormError('');
+  setTimeout(() => setFormSuccess(false), 4000);
+
+  // Aqui você pode enviar os dados para a API
   };
 
   return (

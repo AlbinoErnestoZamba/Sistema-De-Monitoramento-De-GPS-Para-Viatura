@@ -10,6 +10,8 @@ const HomePage = () => {
       {/* Cabeçalho */}
       <header className="header">
         <div className="navbar">
+          <img className="logo_mucune" src="../assets/logo.png" alt="Logo"/>
+          {/* Logo do sistema */}
           <h1>Sistema De Monitoramento GPS</h1>
 
           <div className="nav-links">
@@ -17,7 +19,7 @@ const HomePage = () => {
               <a href="#">Home</a>
               <a href="#">Painel</a>
               <a href="#">Rastreamento de veículos</a>
-              <a href="#">Alertas e notificações</a>
+              <Link to="/alertas">Alertas e notificações</Link>
             </div>
 
             <Link to="/login">
@@ -80,30 +82,37 @@ const HomePage = () => {
       </section>
 
       {/* Seção de Equipe */}
-      <section className="developer-team">
-        <h2>EQUIPE DE DESENVOLVIMENTO</h2>
-        <div className="developer-card">
-          <img src="/assets/developer-photo.jpg" alt="Foto do desenvolvedor" />
-          <p>Nome: Albino Nzaba Ernesto Zamba</p>
-          <p>Estudante de Ciências de Computação</p>
-        </div>
-      </section>
+     {/* Equipe de Desenvolvimento */}
+<section className="developer-team">
+  <h2>Nossa Equipe de Desenvolvimento</h2>
+  <div className="developer-card">
+    <img src="../assets/dev1.jpg" alt="Dev 1" />
+    <p>Garcia Gaspa<br />Frontend Developer</p>
+  </div>
+  <div className="developer-card">
+    <img src="../assets/dev2.jpg" alt="Dev 2" />
+    <p>João Silva<br />Backend Developer</p>
+  </div>
+  <div className="developer-card">
+    <img src="../assets/dev3.jpg" alt="Dev 3" />
+    <p>Ana Sousa<br />UI/UX Designer</p>
+  </div>
+</section>
 
       {/* Rodapé */}
-      <footer className="footer">
-        <div className="newsletter">
-          <h3>Assine nosso newsletter para receber mais informações</h3>
-          <input type="email" placeholder="Digite seu email" />
-          <button>Subscrever</button>
-        </div>
-        <div className="footer-links">
-          <a href="#">Sobre</a>
-          <a href="#">Serviços</a>
-          <a href="#">Contactos</a>
-          <a href="#">Termos</a>
-        </div>
-        <p>© 2025 Sistema De Monitoramento GPS</p>
-      </footer>
+<footer className="footer">
+  <div className="newsletter">
+    <p>Receba novidades por e-mail:</p>
+    <input type="email" placeholder="Digite seu e-mail" />
+    <button>Inscrever-se</button>
+  </div>
+  <div className="footer-links">
+    <a href="#">Política de Privacidade</a>
+    <a href="#">Termos de Uso</a>
+    <a href="#">Ajuda</a>
+  </div>
+  <p>&copy; {new Date().getFullYear()} Sistema de Monitoramento GPS. Todos os direitos reservados.</p>
+</footer>
 
     </div>
   );
