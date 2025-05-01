@@ -1,163 +1,90 @@
-import React, { useState } from 'react';
-import '../styles/AlertNotificationPage.css'; // Importa o arquivo de estilos
-import { FaSearch, FaBell, FaUserCircle } from 'react-icons/fa'; // Importação dos ícones
-import { Link } from 'react-router-dom'; // Importa Link para navegação
+import React, { useState, useEffect } from 'react';
+import './HomePage.css'; // Importe seu arquivo de estilos da HomePage
+import { Link } from 'react-router-dom';
+import { FaCar, FaMapMarkerAlt, FaBell } from 'react-icons/fa'; // Importe os ícones que você usa
 
-const AlertNotificationPage = () => {
-  const [cercaGeograficaAtiva, setCercaGeograficaAtiva] = useState(false);
-  const [raioCerca, setRaioCerca] = useState('');
-  const [notificacaoCercaEmailSMSAtiva, setNotificacaoCercaEmailSMSAtiva] = useState(false);
+const HomePage = () => {
+  const [pageLoaded, setPageLoaded] = useState(false);
 
-  const [alertaVelocidadeAtivo, setAlertaVelocidadeAtivo] = useState(false);
-  const [velocidadeLimite, setVelocidadeLimite] = useState('');
-  const [notificacaoVelocidadeEmailSMSAtiva, setNotificacaoVelocidadeEmailSMSAtiva] = useState(false);
+  useEffect(() => {
+    // Simula um carregamento da página
+    const timer = setTimeout(() => {
+      setPageLoaded(true);
+    }, 500); // Ajuste o tempo conforme necessário
 
-  const handleSalvarAlerta = () => {
-    // Aqui você implementaria a lógica para salvar os alertas
-    console.log('Alertas salvos!');
-  };
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
-    <div className="alertNotificationPageContainer">
+    <div className="homePageContainer">
       <header className="header">
         <div className="navbar">
           <h1>Sistema De Monitoramento GPS</h1>
           <div className="nav-links">
-            <div className="left-links">
-              <Link to="/">Home</Link>
-              <Link to="/painel">Painel</Link>
-              <Link to="/rastreamento">Rastreamento de veículos</Link>
-              <Link to="/alertas" className="active">Alertas e notificações</Link>
-            </div>
-            <div className="right-links">
-              <FaSearch className="headerIcon" />
-              <FaBell className="headerIcon" />
-              <FaUserCircle className="headerIcon" />
-            </div>
+            <Link to="/">Home</Link>
+            <Link to="/painel">Painel</Link>
+            <Link to="/rastreamento">Rastreamento de veículos</Link>
+            <Link to="/alertas">Alertas e notificações</Link>
+            <button className="login-btn">Entrar</button>
           </div>
         </div>
       </header>
 
-      <div className="container">
-        <div className="alertCreationSection">
-          <h2>Crie alertas de veículos</h2>
-          <div className="alertSection">
-            <h3 className="sectionTitle">Alertas De Cerca Geográfica</h3>
-            <div className="switchRow">
-              <p>Alertas De Cerca Geográfica</p>
-              <label className="switch">
-                <input
-                  type="checkbox"
-                  checked={cercaGeograficaAtiva}
-                  onChange={(e) => setCercaGeograficaAtiva(e.target.checked)}
-                />
-                <span className="slider round"></span>
-              </label>
-            </div>
-            {cercaGeograficaAtiva && (
-              <div>
-                <div className="inputGroup"> {/* Novo grupo para label e input */}
-                  <p>Raio da cerca geográfica</p>
-                  <div className="inputUnit">
-                    <input
-                      type="number"
-                      className="input short" 
-                      value={raioCerca}
-                      onChange={(e) => setRaioCerca(e.target.value)}
-                    />
-                    <p className="unit">metros</p>
-                  </div>
-                </div>
-                <div className="switchRow">
-                  <p>Notificações por e-mail/SMS</p>
-                  <label className="switch">
-                    <input
-                      type="checkbox"
-                      checked={notificacaoCercaEmailSMSAtiva}
-                      onChange={(e) => setNotificacaoCercaEmailSMSAtiva(e.target.checked)}
-                    />
-                    <span className="slider round"></span>
-                  </label>
-                </div>
-              </div>
-            )}
+      <main className="mainContent">
+        <section className={`hero ${pageLoaded ? 'loaded' : ''}`} style={{ opacity: pageLoaded ? 1 : 0, transition: 'opacity 1s ease-in-out' }}>
+          <h2>Monitore Seus Veículos em Tempo Real</h2>
+          <p>Acompanhe a localização, receba alertas e otimize a gestão da sua frota.</p>
+          <button className="register-btn">Cadastre-se Grátis</button>
+        </section>
+
+        <section className={`features ${pageLoaded ? 'loaded' : ''}`} style={{ opacity: pageLoaded ? 1 : 0, transition: 'opacity 1s ease-in-out' }}>
+          <div className="feature">
+            <FaCar className="feature-icon" />
+            <h3>Rastreamento Preciso</h3>
+            <p>Localização em tempo real com alta precisão.</p>
           </div>
-
-          <div className="alertSection">
-            <h3 className="sectionTitle">Alerta De Velocidade</h3>
-            <div className="switchRow">
-              <p>Alerta De Velocidade</p>
-              <label className="switch">
-                <input
-                  type="checkbox"
-                  checked={alertaVelocidadeAtivo}
-                  onChange={(e) => setAlertaVelocidadeAtivo(e.target.checked)}
-                />
-                <span className="slider round"></span>
-              </label>
-            </div>
-            {alertaVelocidadeAtivo && (
-              <div>
-                <div className="inputGroup"> {/* Novo grupo para label e input */}
-                  <p>Velocidade limite</p>
-                  <div className="inputUnit">
-                    <input
-                      type="number"
-                      className="input short"
-                      value={velocidadeLimite}
-                      onChange={(e) => setVelocidadeLimite(e.target.value)}
-                    />
-                    <p className="unit">km/h</p>
-                  </div>
-                </div>
-                <div className="switchRow">
-                  <p>Notificações por e-mail/SMS</p>
-                  <label className="switch">
-                    <input
-                      type="checkbox"
-                      checked={notificacaoVelocidadeEmailSMSAtiva}
-                      onChange={(e) => setNotificacaoVelocidadeEmailSMSAtiva(e.target.checked)}
-                    />
-                    <span className="slider round"></span>
-                  </label>
-                </div>
-              </div>
-            )}
+          <div className="feature">
+            <FaMapMarkerAlt className="feature-icon" />
+            <h3>Cercas Geográficas</h3>
+            <p>Defina áreas e receba alertas de entrada e saída.</p>
           </div>
-
-          <button className="saveButton" onClick={handleSalvarAlerta}>SALVAR ALERTA</button>
-        </div>
-
-        <div className="mapContainer">
-          {/* A imagem agora é um background no CSS */}
-        </div>
-
-        <div className="activeAlertsSection">
-          <h3 className="sectionTitle">Alertas Ativos</h3>
-          <div className="activeAlertsGrid"> {/* Novo container para os alertas ativos */}
-            <div className="activeAlertCard">
-              <h4 className="alertTitle">Alerta do motor</h4>
-              <p>Alta temperatura do motor detectada</p>
-              <p>2 horas atrás</p>
-            </div>
-            <div className="activeAlertCard">
-              <h4 className="alertTitle">Alerta de roubo</h4>
-              <p>Tentativa de roubo, na muamba</p>
-              <p>3 horas atrás</p>
-            </div>
+          <div className="feature">
+            <FaBell className="feature-icon" />
+            <h3>Alertas Inteligentes</h3>
+            <p>Notificações personalizadas para eventos importantes.</p>
           </div>
+        </section>
+
+        <section className="developer-team">
+          <h2>Equipe de Desenvolvimento</h2>
+          <div className="developer-card">
+            <img src="../assets/dev1.jpg" alt="Desenvolvedor 1" />
+            <p>Nome do Desenvolvedor 1</p>
+          </div>
+          <div className="developer-card">
+            <img src="../assets/dev2.jpg" alt="Desenvolvedor 2" />
+            <p>Nome do Desenvolvedor 2</p>
+          </div>
+          {/* Adicione mais membros da equipe conforme necessário */}
+        </section>
+      </main>
+
+      <footer className="footer">
+        <div className="newsletter">
+          <h3>Assine nossa Newsletter</h3>
+          <input type="email" placeholder="Seu e-mail" />
+          <button>Assinar</button>
         </div>
-      </div>
+        <div className="footer-links">
+          <Link to="/">Início</Link>
+          <Link to="/painel">Painel</Link>
+          <Link to="/sobre">Sobre Nós</Link>
+          <Link to="/contato">Contato</Link>
+        </div>
+        <p>&copy; 2023 Sistema de Monitoramento GPS. Todos os direitos reservados.</p>
+      </footer>
     </div>
   );
 };
 
-const Text = (props) => <p>{props.children}</p>;
-const Switch = ({ value, onValueChange }) => (
-  <label className="switch">
-    <input type="checkbox" checked={value} onChange={(e) => onValueChange(e.target.checked)} />
-    <span className="slider round"></span>
-  </label>
-);
-
-export default AlertNotificationPage;
+export default HomePage;
