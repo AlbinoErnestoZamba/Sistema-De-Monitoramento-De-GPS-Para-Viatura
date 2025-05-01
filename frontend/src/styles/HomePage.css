@@ -14,15 +14,6 @@
   font-weight: bold;
 }
 
-.logo_mucune{
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-image: url('../assets/logo.jpeg');
-  background-size: cover;
-  background-position: center;
-  margin-right: -184px;
-}
 .nav-links {
   display: flex;
   align-items: center;
@@ -69,8 +60,11 @@
 }
 
 .hero h2 {
+  background-color: rgba(0, 0, 0, 0.5);
   font-size: 36px;
   margin-bottom: 20px;
+  display: inline-block;
+  border-radius: 25px;
 }
 
 .hero p {
@@ -91,7 +85,7 @@
 }
 
 .register-btn:hover {
-  background-color: #f0f0f0;
+  background-color: #2522d6;
 }
 
 /* Features Section */

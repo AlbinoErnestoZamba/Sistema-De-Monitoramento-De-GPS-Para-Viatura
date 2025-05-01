@@ -1,0 +1,250 @@
+.alertNotificationPageContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Garante que o container ocupe pelo menos a altura da tela */
+  background-color: #f9f9f9;
+}
+
+.alertNotificationPageContainer .header {
+  background: linear-gradient(to right, #5c6bc0, #8e24aa);
+  color: white;
+  padding: 20px 70px; /* Espaçamento interno igual ao navbar da homepage */
+}
+
+.alertNotificationPageContainer .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.alertNotificationPageContainer .nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.alertNotificationPageContainer .left-links {
+  display: flex;
+}
+
+.alertNotificationPageContainer .left-links a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+}
+
+.alertNotificationPageContainer .left-links a.active {
+  font-weight: bold; /* Destaca o link ativo */
+}
+
+.alertNotificationPageContainer .right-links {
+  display: flex;
+  align-items: center;
+}
+
+.alertNotificationPageContainer .headerTitle {
+  font-size: 24px;
+  font-weight: bold;
+  margin-right: 20px; /* Espaço entre o título e os links */
+}
+
+.alertNotificationPageContainer .headerIcon {
+  font-size: 20px;
+  margin-left: 16px;
+  cursor: pointer;
+}
+
+.alertNotificationPageContainer .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza o conteúdo horizontalmente */
+  padding: 20px; /* Adiciona um pouco de espaçamento ao redor do conteúdo principal */
+}
+
+.alertNotificationPageContainer .alertCreationSection {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 50%; /* Ocupa metade da largura do container */
+  margin-bottom: 20px; /* Espaçamento abaixo da seção */
+}
+
+.alertNotificationPageContainer .alertCreationSection h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  text-align: center; /* Centraliza o título da seção */
+}
+
+.alertNotificationPageContainer .alertSection {
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  border: 1px solid #E0E0E0;
+}
+
+.alertNotificationPageContainer .sectionTitle {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.alertNotificationPageContainer .switchRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+/* ... (seu CSS anterior) ... */
+
+.alertNotificationPageContainer .inputGroup {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.alertNotificationPageContainer .inputGroup > p {
+  margin-right: 20px;
+}
+
+.alertNotificationPageContainer .inputUnit {
+  display: flex;
+  align-items: center;
+}
+
+.alertNotificationPageContainer .input.short {
+  width: 50px; /* Ajuste a largura conforme necessário */
+  margin-right: 8px;
+}
+
+.alertNotificationPageContainer .activeAlertsSection {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.alertNotificationPageContainer .activeAlertsSection h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.alertNotificationPageContainer .activeAlertsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Cria colunas responsivas */
+  gap: 16px; /* Espaçamento entre os cards */
+}
+
+.alertNotificationPageContainer .activeAlertCard {
+  background-color: #f9f9f9;
+  padding: 16px;
+  border-radius: 4px;
+  border: 1px solid #e0e0e0;
+}
+
+.alertNotificationPageContainer .alertCardTitle {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+/* ... (restante do seu CSS) ... */
+
+.alertNotificationPageContainer .saveButton {
+  background-color: #8A2BE2;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.alertNotificationPageContainer .mapContainer {
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  border: 1px solid #E0E0E0;
+  width: 50%; /* Ocupa metade da largura do container */
+  height: 150px; /* Defina uma altura para o container do mapa */
+  background-image: url('../assets/map_placeholder.jpg'); /* Caminho para a imagem */
+  background-size: cover; /* Garante que a imagem cubra o container */
+  background-position: center; /* Centraliza a imagem dentro do container */
+}
+
+.alertNotificationPageContainer .mapImage {
+  display: none; /* Esconde a tag <img> que não será mais usada */
+}
+
+.alertNotificationPageContainer .activeAlertsSection {
+  width: 50%; /* Ocupa metade da largura do container */
+  margin-bottom: 16px;
+}
+
+.alertNotificationPageContainer .activeAlertCard {
+  background-color: white;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  border: 1px solid #E0E0E0;
+}
+
+.alertNotificationPageContainer .alertTitle {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+/* Estilos para o Switch */
+.alertNotificationPageContainer .switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 24px;
+}
+
+.alertNotificationPageContainer .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.alertNotificationPageContainer .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 24px;
+}
+
+.alertNotificationPageContainer .slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+.alertNotificationPageContainer .switch input:checked + .slider {
+  background-color: #2196F3;
+}
+
+.alertNotificationPageContainer .switch input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+.alertNotificationPageContainer .switch input:checked + .slider:before {
+  transform: translateX(16px);
+}

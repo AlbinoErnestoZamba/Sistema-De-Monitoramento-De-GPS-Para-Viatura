@@ -10,7 +10,7 @@ const HomePage = () => {
       {/* Cabeçalho */}
       <header className="header">
         <div className="navbar">
-          <img className="logo_mucune" src="../assets/logo.png" alt="Logo"/>
+         {/* <div className="logo_mucune"></div> */}
           {/* Logo do sistema */}
           <h1>Sistema De Monitoramento GPS</h1>
 
