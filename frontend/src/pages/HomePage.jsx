@@ -16,8 +16,8 @@ const HomePage = () => {
 
           <div className="nav-links">
             <div className="left-links">
-              <a href="#">Home</a>
-              <a href="#">Painel</a>
+            <Link to="/">Home</Link> {/* ⬅️ Link para a homepage */}
+            <Link to="/painel" className="active">Painel</Link>
               <a href="#">Rastreamento de veículos</a>
               <Link to="/alertas">Alertas e notificações</Link>
             </div>
