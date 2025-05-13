@@ -87,15 +87,19 @@ const HomePage = () => {
   <h2>Nossa Equipe de Desenvolvimento</h2>
   <div className="developer-card">
     <img src="../assets/dev1.jpg" alt="Dev 1" />
-    <p>Garcia Gaspa<br />Frontend Developer</p>
+    <p>Garcia Gaspa<br />Finalista</p>
   </div>
   <div className="developer-card">
     <img src="../assets/dev2.jpg" alt="Dev 2" />
-    <p>João Silva<br />Backend Developer</p>
+    <p>Albino Zamba<br />Backend Developer</p>
   </div>
   <div className="developer-card">
     <img src="../assets/dev3.jpg" alt="Dev 3" />
-    <p>Ana Sousa<br />UI/UX Designer</p>
+    <p>Francisco Calueto<br />UI/UX Designer</p>
+  </div>
+  <div className="developer-card">
+    <img src="../assets/dev3.jpg" alt="Dev 3" />
+    <p>Ednário Teixeira<br />Finalista</p>
   </div>
 </section>
 

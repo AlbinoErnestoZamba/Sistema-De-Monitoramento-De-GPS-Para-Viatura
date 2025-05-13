@@ -1,167 +1,247 @@
 .painelPageContainer {
-    display: flex;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f4f6f8;
+}
+
+.painelPageContainer .header {
+  background: #1e1e2f;
+  color: #ffffff;
+  padding: 20px 60px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.painelPageContainer .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.painelPageContainer .navbar h1 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.painelPageContainer .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.painelPageContainer .nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.painelPageContainer .nav-links a:hover {
+  color: #c0aaff;
+}
+
+.painelPageContainer .nav-links a.active {
+  font-weight: bold;
+}
+
+.painelPageContainer .right-links {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.painelPageContainer .headerIcon {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.painelPageContainer .dashboardLayout {
+  display: flex;
+  flex-grow: 1;
+}
+
+.painelPageContainer .sidebar {
+  background-color: #2d3748;
+  color: #e2e8f0;
+  padding: 20px;
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /*height: 100%;*/
+}
+
+.painelPageContainer .sidebarItem {
+  padding: 15px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+  text-decoration: none;
+  color: #e2e8f0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.painelPageContainer .sidebarItem.active,
+.painelPageContainer .sidebarItem:hover {
+  background-color: #4a5568;
+  color: #ffffff;
+}
+
+.painelPageContainer .sidebarIcon {
+  font-size: 20px;
+}
+
+.painelPageContainer .mainContent {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-left: 220px;
+}
+
+.painelPageContainer .dashboardOverview {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.painelPageContainer .overviewCard {
+  background-color: #ffffff;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  min-width: 140px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.painelPageContainer .overviewIcon {
+  font-size: 24px;
+  color: #6c47ff;
+  margin-bottom: 5px;
+}
+
+.painelPageContainer .overviewCard h3 {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.painelPageContainer .overviewCard p {
+  font-size: 20px;
+  font-weight: bold;
+  color: #6c47ff;
+}
+
+.painelPageContainer .dashboardContent {
+  display: flex;
+  gap: 20px;
+  flex-grow: 1;
+}
+
+.painelPageContainer .mapContainer {
+  flex: 2;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 560px;
+  height: 560px;; /* Defina uma altura inicial para o mapa */
+}
+
+/* Estilos do Leaflet para garantir que o mapa preencha o container */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px; /* Para corresponder ao container */
+}
+
+.painelPageContainer .sidebarRight {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.painelPageContainer .sidebarSection {
+  background-color: #ffffff;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.painelPageContainer .sidebarSection h3 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.painelPageContainer .locationInfo p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.painelPageContainer .locationInfo span {
+  font-weight: bold;
+}
+
+.painelPageContainer .logisticsInfo p {
+  font-size: 16px;
+  color: #555;
+}
+
+.painelPageContainer .locationSection {
+  background-color: #f9dada;
+  border-left: 5px solid #e53e3e;
+}
+
+.painelPageContainer .logisticsSection {
+  background-color: #d4edda;
+  border-left: 5px solid #155724;
+}
+
+/* Media query para telas menores */
+@media (max-width: 768px) {
+  .painelPageContainer {
     flex-direction: column;
-    min-height: 100vh;
-    background-color: #f4f6f8; /* Um tom de cinza claro para o fundo */
   }
-  
-  /* Estilos do Header (reutilizando estilos da HomePage) */
-  .painelPageContainer .header {
-    background: #1e1e2f; /* Fundo escuro */
-    color: #ffffff;
-    padding: 20px 60px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  .painelPageContainer .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-  }
-  
-  .painelPageContainer .navbar h1 {
-    font-size: 24px;
-    font-weight: bold;
-  }
-  
-  .painelPageContainer .nav-links {
-    display: flex;
-    align-items: center;
-    gap: 25px;
-  }
-  
-  .painelPageContainer .nav-links a {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 16px;
-    transition: 0.3s;
-  }
-  
-  .painelPageContainer .nav-links a:hover {
-    color: #c0aaff;
-  }
-  
-  .painelPageContainer .nav-links a.active {
-    font-weight: bold;
-    /* Adicione estilos para indicar a página ativa, se desejar */
-  }
-  
-  .painelPageContainer .right-links {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-  }
-  
-  .painelPageContainer .headerIcon {
-    font-size: 20px;
-    cursor: pointer;
-  }
-  
-  /* Estilos do Conteúdo Principal */
-  .painelPageContainer .mainContent {
-    padding: 20px;
-    display: flex;
+
+  .painelPageContainer .dashboardLayout {
     flex-direction: column;
-    gap: 20px;
   }
-  
-  .painelPageContainer .dashboardOverview {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 20px;
-    flex-wrap: wrap; /* Permite que os cards quebrem em telas menores */
-  }
-  
-  .painelPageContainer .overviewCard {
-    background-color: #ffffff;
-    padding: 15px 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    flex: 1; /* Distribui o espaço igualmente entre os cards */
-    min-width: 150px; /* Garante uma largura mínima para os cards */
-    text-align: center;
-  }
-  
-  .painelPageContainer .overviewCard h3 {
-    font-size: 18px;
-    color: #333;
-    margin-bottom: 5px;
-  }
-  
-  .painelPageContainer .overviewCard p {
-    font-size: 24px;
-    font-weight: bold;
-    color: #6c47ff;
-  }
-  
-  .painelPageContainer .dashboardContent {
-    display: flex;
-    gap: 20px;
-    flex-grow: 1; /* Ocupa o espaço restante na mainContent */
-  }
-  
-  .painelPageContainer .mapContainer {
-    flex: 2; /* O mapa ocupa mais espaço */
-    background-color: #e0e0e0; /* Cor de fundo temporária para o mapa */
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .painelPageContainer .mapImage {
-    width: 100%;
-    height: auto; /* Mantenha a proporção da imagem */
-    display: block; /* Remove espaçamento extra abaixo da imagem */
-  }
-  
+
   .painelPageContainer .sidebar {
-    flex: 1; /* A barra lateral ocupa menos espaço */
-    display: flex;
+    width: 100%;
+    flex-direction: row;
+    overflow-x: auto;
+    align-items: center;
+    height: auto;
+  }
+
+  .painelPageContainer .mainContent {
+    margin-left: 0;
+    padding-left: 20px;
+  }
+
+  .painelPageContainer .dashboardContent {
     flex-direction: column;
-    gap: 20px;
   }
-  
-  .painelPageContainer .sidebarSection {
-    background-color: #ffffff;
-    padding: 15px 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  .painelPageContainer .mapContainer,
+  .painelPageContainer .sidebarRight {
+    width: 100%;
   }
-  
-  .painelPageContainer .sidebarSection h3 {
-    font-size: 18px;
-    color: #333;
-    margin-bottom: 10px;
-  }
-  
-  .painelPageContainer .locationInfo p {
-    font-size: 16px;
-    color: #555;
-    margin-bottom: 5px;
-  }
-  
-  .painelPageContainer .locationInfo span {
-    font-weight: bold;
-  }
-  
-  .painelPageContainer .logisticsInfo p {
-    font-size: 16px;
-    color: #555;
-  }
-  
-  /* Estilos para telas menores */
-  @media (max-width: 768px) {
-    .painelPageContainer .dashboardContent {
-      flex-direction: column; /* Empilha o mapa e a barra lateral */
-    }
-  
-    .painelPageContainer .mapContainer,
-    .painelPageContainer .sidebar {
-      width: 100%;
-    }
-  }
+}

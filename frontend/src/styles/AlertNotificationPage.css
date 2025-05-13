@@ -171,8 +171,8 @@
   margin-bottom: 16px;
   border: 1px solid #E0E0E0;
   width: 50%; /* Ocupa metade da largura do container */
-  height: 150px; /* Defina uma altura para o container do mapa */
-  background-image: url('../assets/map_placeholder.jpg'); /* Caminho para a imagem */
+  height: 635px; /* Defina uma altura para o container do mapa */
+  background-image: url('../assets/Map.png'); /* Caminho para a imagem */
   background-size: cover; /* Garante que a imagem cubra o container */
   background-position: center; /* Centraliza a imagem dentro do container */
 }
