@@ -1,16 +1,14 @@
-version: '3.8'
-
 services:
   db:
     image: postgres:latest
     container_name: gps_postgres
     restart: always
     environment:
-      POSTGRES_USER: gps_user
-      POSTGRES_PASSWORD: gps_password
-      POSTGRES_DB: gps_database
+      POSTGRES_USER: azamba
+      POSTGRES_PASSWORD: '1234'
+      POSTGRES_DB: gps_tracker
     ports:
-      - "5432:5432"
+      - "5434:5432"  # Corrigido aqui!
     volumes:
       - pgdata:/var/lib/postgresql/data
     networks:
@@ -30,21 +28,7 @@ services:
     networks:
       - gps_network
 
-  backend:
-    build: ./backend
-    container_name: gps_backend
-    restart: always
-    environment:
-      DATABASE_URL: postgresql://gps_user:gps_password@db:5432/gps_database
-    ports:
-      - "5000:5000"
-    depends_on:
-      - db
-    networks:
-      - gps_network
-
 volumes:
   pgdata:
-
 networks:
   gps_network:

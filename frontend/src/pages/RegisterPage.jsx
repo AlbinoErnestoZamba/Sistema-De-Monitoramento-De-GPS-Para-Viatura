@@ -9,16 +9,9 @@ const RegisterPage = () => {
   const [formSuccess, setFormSuccess] = useState(false);
   const [formError, setFormError] = useState('');
   const [formData, setFormData] = useState({
-    nome: '',
-    sobrenome: '',
-    email: '',
-    telefone: '',
-    senha: '',
+    username: '', // Usando 'username' para corresponder ao backend
+    password: '',
     confirmarSenha: '',
-    marca: '',
-    modelo: '',
-    ano: '',
-    vin: '',
   });
 
   const handleCancel = () => navigate('/');
@@ -28,32 +21,37 @@ const RegisterPage = () => {
     setFormError('');
   };
 
-  const handleSubmit = (e) => {
-     e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  const vinValido = /^[A-HJ-NPR-Z0-9]{17}$/i;
+    if (formData.password !== formData.confirmarSenha) {
+      setFormError('As senhas não coincidem!');
+      return;
+    }
 
-  if (!emailValido.test(formData.email)) {
-    setFormError('Por favor, insira um endereço de e-mail válido!');
-    return;
-  }
+    try {
+      const response = await fetch('http://localhost:8000/api/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          username: formData.username,
+          password: formData.password,
+        }),
+      });
 
-  if (formData.senha !== formData.confirmarSenha) {
-    setFormError('As senhas não coincidem!');
-    return;
-  }
-
-  if (!vinValido.test(formData.vin)) {
-    setFormError('O VIN do veículo deve conter exatamente 17 caracteres válidos.');
-    return;
-  }
-
-  setFormSuccess(true);
-  setFormError('');
-  setTimeout(() => setFormSuccess(false), 4000);
-
-  // Aqui você pode enviar os dados para a API
+      if (response.ok) {
+        setFormSuccess(true);
+        setFormError('');
+        setTimeout(() => navigate('/login'), 2000); // Redirecionar para a página de login após o sucesso
+      } else {
+        const errorData = await response.json();
+        setFormError(errorData.detail || 'Erro ao registrar usuário.');
+      }
+    } catch (error) {
+      setFormError('Erro de conexão com o servidor.');
+    }
   };
 
   return (
@@ -63,7 +61,7 @@ const RegisterPage = () => {
       {formSuccess && (
         <div className="success-bar">
           <CheckCircle size={20} />
-          <span>Dados enviados com sucesso!</span>
+          <span>Conta criada com sucesso! Redirecionando para login...</span>
         </div>
       )}
 
@@ -76,30 +74,39 @@ const RegisterPage = () => {
 
       <form className="register-form" onSubmit={handleSubmit}>
         <fieldset>
-          <legend>Informações do usuário</legend>
-          <p>Forneça seu nome, endereço de e-mail e senha.</p>
+          <legend>Informações de login</legend>
+          <p>Escolha um nome de usuário e senha.</p>
 
-          <input type="text" name="nome" placeholder="Digite seu primeiro nome" onChange={handleChange} required />
-          <input type="text" name="sobrenome" placeholder="Digite seu sobrenome" onChange={handleChange} required />
-          <input type="email" name="email" placeholder="Digite seu endereço de e-mail" onChange={handleChange} required />
-          <input type="tel" name="telefone" placeholder="Número de telefone" onChange={handleChange} required />
-          <input type="password" name="senha" placeholder="Digite sua senha" onChange={handleChange} required />
-          <input type="password" name="confirmarSenha" placeholder="Confirme sua senha" onChange={handleChange} required />
-        </fieldset>
-
-        <fieldset>
-          <legend>Detalhes do veículo</legend>
-          <p>Informe a marca, o modelo e o ano do seu veículo.</p>
-
-          <input type="text" name="marca" placeholder="Toyota" onChange={handleChange} required />
-          <input type="text" name="modelo" placeholder="Insira o modelo do seu veículo" onChange={handleChange} required />
-          <input type="number" name="ano" placeholder="2020" onChange={handleChange} required />
-          <input type="text" name="vin" placeholder="Insira o VIN do seu veículo" onChange={handleChange} required />
+          <input
+            type="text"
+            name="username"
+            placeholder="Digite seu nome de usuário"
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Digite sua senha"
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="password"
+            name="confirmarSenha"
+            placeholder="Confirme sua senha"
+            onChange={handleChange}
+            required
+          />
         </fieldset>
 
         <div className="register-buttons">
-          <button type="button" onClick={handleCancel}>Cancela</button>
-          <button type="submit" className="submit-btn">Enviar</button>
+          <button type="button" onClick={handleCancel}>
+            Cancela
+          </button>
+          <button type="submit" className="submit-btn">
+            Enviar
+          </button>
         </div>
       </form>
     </div>
@@ -107,5 +114,4 @@ const RegisterPage = () => {
 };
 
 export default RegisterPage;
-
 

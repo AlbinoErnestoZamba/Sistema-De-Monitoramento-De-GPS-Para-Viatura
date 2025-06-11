@@ -72,6 +72,46 @@
   margin-bottom: 30px;
 }
 
+.Dev_1 {
+  background-image: url(../assets/Garcia.jpeg);
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 150px 160px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.Dev_2 {
+  background-image: url(../assets/dev1.jpg);
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 150px 160px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.Dev_3 {
+  background-image: url(../assets/);
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 150px 160px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.Dev_4 {
+  background-image: url(../assets/Ednar.jpeg);
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 150px 160px;
+  border-radius: 20px;
+  text-align: center;
+}
+
 .register-btn {
   background-color: white;
   color: #6c47ff;
